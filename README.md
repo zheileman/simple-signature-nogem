@@ -1,16 +1,16 @@
 # Running the tests
 
-❯ bundle exec rake
+❯ bundle exec rake  
 Finished in 0.03081 seconds
 25 examples, 0 failures
 
 
 # Running the rake tasks to quickly sign and validate
 
-❯ bundle exec rake "sign[mykey]"
+❯ bundle exec rake "sign[mykey]"  
 {"sigkey"=>"mykey", "signature"=>"81d947ab71a218002fa94a2f33be8101839ea418", "timestamp"=>1442756700}
 
-❯ bundle exec rake "validate[mykey,81d947ab71a218002fa94a2f33be8101839ea418,1442756700]"
+❯ bundle exec rake "validate[mykey,81d947ab71a218002fa94a2f33be8101839ea418,1442756700]"  
 Success? true
 
 
@@ -23,7 +23,7 @@ Success? true
     c.key_param_name = 'sigkey'           # default is 'sigkey'
     c.signature_param_name = 'signature'  # default is 'signature'
     c.timestamp_param_name = 'timestamp'  # default is 'timestamp'
-    c.logger = Rails.logger               # default is nil (no logger). Can be a lambda.
+    c.logger = Logger.new($stdout)        # default is nil (no logger). Can be a lambda.
   end  
 ```
 
